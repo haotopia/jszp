@@ -14,19 +14,23 @@ getAll.onclick = function() {
 function checkBox(name, ele) {
     var checkOrNot = ele.getElementsByTagName('input')[0];
     var trBtn = ele.getElementsByTagName('button')[0];
-    checkOrNot.onchange = function() {
-        var trId = $(this).parent().next()[0].innerHTML;           
+    var trId = ele.getElementsByTagName('td')[1].innerHTML; 
+    checkOrNot.onchange = function() {           
         if(this.checked) {
             if(sessionStorage.getItem(name)) {
                 var arrItem = sessionStorage.getItem(name);
-                var newArr = stringToArr(arrItem, trId);
-                newArr.push(trId);
+                var newArr = stringToArr(arrItem,trId);
+                newArr[trId - 1] = trId; 
                 sessionStorage.setItem(name, newArr)
             } else {
-                var arr = [trId];
+                var arr = new Array();
+                arr[trId-1] = trId;
                 sessionStorage.setItem(name, arr);
-            }                
-        } else {    
+            }
+                     
+            
+        } else {
+            
             var data = sessionStorage.getItem(name);
             var newArr = stringToArr(data, trId);
             sessionStorage.setItem(name, newArr);
@@ -55,9 +59,9 @@ function stringToArr(arr, n) {
     var newArr = new Array();
     var i, len = tempArr.length;
     for(i = 0; i < len; i++) {
-        if(tempArr[i] && Number(tempArr[i]) != n) {       
-           newArr.push(tempArr[i] * 1);
-        }     
+        if(tempArr[i]||Number(tempArr[i] !=n)){
+            newArr.push(tempArr[i]*1);
+        }
     }
     return newArr;
 }
@@ -76,16 +80,28 @@ for(var i = 0; i < tableTr.length; i++) {
 var getPart = document.getElementById('getPart');
 getPart.onclick = function() {
     var aSrc = this.getElementsByTagName('a')[0];
-    var datas = sessionStorage.getItem(table.id);
-    //var arr = stringToArr(data);
-    if(datas) {
+    var data = sessionStorage.getItem(table.id);
+    var arr = stringToArr(data);
+
+    var arrdata=[];
+    var k=0;
+    $.each(arr,function (i,val) {
+        if(val){
+            arrdata[k]=i;
+            k++;
+        }
+    });
+
+
+    if(arr.length) {
         $.ajax({
             type: 'post',
-            url: 'outputList',
+            url: '',
             dataType: "json",
-            data: datas,
+            data: arr,
             success: function (data) {
                 aSrc.href = data.href;
+                console.log(arr)
             },
             error: function (jqXHR) {
                 alert("发生错误：" + jqXHR.status);
@@ -95,6 +111,26 @@ getPart.onclick = function() {
         alert('你还没有选择任何数据');
     }
    
+}
+
+// 搜索功能
+var search = document.getElementById('search');
+search.onclick = function() {
+    var content = document.getElementById('content');
+    var value = content.value;
+    if(value) {
+        $.ajax({
+            type: 'post',
+            url: 'search',
+            dataType: "HTML",
+            data: {'search':value},
+            success: function(result) {
+            },
+            error: function(jqXHR) {
+                alert("发生错误：" + jqXHR.status);
+            }
+        })
+    }
 }
 
 // 删除table.id里的字符串

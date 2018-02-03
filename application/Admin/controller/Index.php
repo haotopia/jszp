@@ -73,11 +73,25 @@ class Index extends Controller
             echo $output;
     }
     public function outputList(){
-        $list=$_POST['output'];
-        $list=model('Admin')->getList($list);
-        $output=model('Admin')->zipDir($list,"/zips/outputList.zip");
-        if($output)
-            return '/zips/outputList.zip';
+        $list=json_encode($_POST);
+        $list=str_replace("{\"",'',$list);
+        $list=str_replace("\":\"\"}",'',$list);
+        $arr=explode(",",$list);
+        $k=0;
+        foreach ($arr as $v){
+            $v=str_replace(',','',$v);
+            $qu=model('Admin')->findUserById($v);
+            $li[$k]=str_replace('pdfs/','',$qu['pdf']);
+            $k++;
+        }
+        $output=model('Admin')->zipDir(Env::get('root_path').'pdfs',"outputList.zip",$li);
+        if(!$output) {
+            $reuslt = array(
+                'status'=>'1',
+                'href' => '/public/outputList.zip',
+            );
+            return json_encode($reuslt);
+        }
         else
             return show('0','服务器错误','');
     }

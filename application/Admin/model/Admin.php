@@ -36,8 +36,10 @@ class admin extends Model
             ->where('a.candidate_id|candidate_name|sex|party|full_time_degree|ft_school|profession|programme_info|team','like','%'.$search.'%')
             ->paginate(10);
     }
-    public function output(){
-
+    public function findUserById($v){
+        return Db::table('jszp_user')
+            ->whereLike('candidate_id',$v)
+            ->find();
     }
 
     public function zipDir($basePath,$zipName,$fileList=NULL){
