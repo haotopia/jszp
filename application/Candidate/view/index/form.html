@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>报名登记表</title>
+    <meta name="keywords" content="华北电力大学,报名登记界面,教师招聘,华北电力大学电力工程系,教师招聘,报名表,报名登记表">
+    <meta name="description" content="华北电力大学电力工程系教师招聘网站用户报名界面">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="/public/css/reset.css" rel="stylesheet">
+    <link href="/public/css/form.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row pc" id="pc">
+            <div class="col-md-12 col-lg-offset-2 col-lg-8 pc-content" id="pc-content">
+                <h2 class="text-center">华北电力大学电力工程系</h2>
+                <h2 class="text-center">公开招聘教师报名登记表</h2>
+                <section class="pc-maincon" id="pc-maincon"> 
+                    <h3>基本信息</h3>
+                    <div class="pc-main-infor" id="pc-main-infor">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="name">姓名</label>
+                                    <input type="text" class="form-control" name="name" id="name">
+                                    <p class="sr-only">*没有填写姓名</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="sex">性别</label>
+                                    <select class="form-control" id="sex" name="sex">
+                                        <option>男</option>
+                                        <option>女</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-select" id="dob">
+                                    <label for="dob">出生年月</label>
+                                    <select class="form-control" id="year" name="year">
+                                    </select>
+                                    <select class="form-control" id="month" name="month">
+                                    </select>
+                                    <select class="form-control" id="day" name="day">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="nationality">民族</label>
+                                    <input type="text" class="form-control" id="nationality" name="nationality">
+                                    <p class="sr-only">*没有填写民族</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="oriho">籍贯</label>
+                                    <input type="text" class="form-control" id="origo" name="origo">
+                                    <p class="sr-only">*没有填写籍贯</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="birthplace">出生地</label>
+                                    <input type="text" class="form-control" id="birthplace" name="birthplace">
+                                    <p class="sr-only">*没有填写出生地</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="party">党派</label>
+                                    <input type="text" class="form-control" id="party" name="party"> 
+                                    <p class="sr-only">*没有填写党派</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-select" id="join_time">
+                                    <label for="join">党派参加时间</label>
+                                    <select class="form-control" id="join-year" name="join-year">
+                                    </select>
+                                    <select class="form-control" id="join-month" name="join-month">
+                                    </select>
+                                    <select class="form-control" id="join-day" name="join-day">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-select" id="work_start_time">
+                                    <label for="work-start-time">参加工作时间</label>
+                                    <select class="form-control" id="work-start-time-year" name="work-start-time-year">
+                                    </select>
+                                    <select class="form-control" id="work-start-time-month" name="work-start-time-month">
+                                    </select>
+                                    <select class="form-control" id="work-start-time-day" name="work-start-time-day">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="profession-title ">专业技术职务</label>
+                                    <input type="text" class="form-control" id="profession-title" name="profession-title">
+                                    <p class="sr-only">*没有填写职务</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="profession">研究方向</label>
+                                    <input type="text" class="form-control" id="profession" name="profession">
+                                    <p class="sr-only">*没有填写研究方向</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="occupation">现工作单位及职务</label>
+                                    <input type="text" class="form-control" id="occupation" name="occupation">
+                                    <p class="sr-only">*没有填写职务</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="in-service-time">任现职时间</label>
+                                    <input type="text" class="form-control" id="in-service-time" name="in-service-time">
+                                    <p class="sr-only">*没有任现职时间</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="cell-phone">联系方式</label>
+                                    <input type="text" class="form-control" id="cell-phone" name="cell-phone">
+                                    <p class="sr-only">*没有联系方式</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="email">电子邮箱</label>
+                                    <input type="email" class="form-control" id="email" name="email">
+                                    <p class="sr-only">*未填写</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="programme-info">人才计划入选情况</label>
+                                    <input type="text" class="form-control" id="programme-info" name="programme-info">
+                                    <p class="sr-only">*没有入选情况</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="health-info">健康状况</label>
+                                    <input type="text" class="form-control" id="health-info" name="health-info">
+                                    <p class="sr-only">*没有健康状况</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="team">应聘团队</label>
+                                    <select class="form-control" id="team" name="team">
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="small-title">学历学位</h3>
+                    <div class="pc-main-tech" id="pc-main-teach">
+                        <div class="row">
+                            <div class="col-md-6">
+                               <div class="form-group">
+                                   <label for="full-time-degree">全日制教育</label>
+                                   <input type="text" class="form-control" id="full-time-degree" name="full-time-degree">
+                                   <p class="sr-only">*没有填写</p>
+                               </div>
+                            </div>
+                            <div class="col-md-6">
+                               <div class="form-group">
+                                   <label for="ft-school">毕业院校及专业</label>
+                                   <input type="text" class="form-control" id="ft-school" name="ft-school">
+                                   <p class="sr-only">*没有填写</p>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="row">             
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="in-service-degree">在职教育</label>
+                                    <input type="text" class="form-control" id="in-service-degree" name="in-service-degree">
+                                    <p class="sr-only">*没有填写</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="ins-school">毕业院校及专业</label>
+                                    <input type="text" class="form-control" id="ins-school" name="ins-school">
+                                    <p class="sr-only">*没有填写</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="small-title">主要学习和工作简历<small>(从大学开始)</small></h3>
+                    <div class="pc-main-study" id="pc-main-study">
+                        <div class="row">
+                            <div class="col-md-12">
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" id="resume" name="resum"></textarea>
+                                <p class="sr-only">*没有填写</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="small-title">个人简介</h3>
+                    <div class="pc-main-study" id="pc-main-intro">
+                        <div class="row">
+                            <div class="col-md-12">
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" id="personal-info" name="personal-intro"></textarea>
+                                <p class="sr-only">*没有填写</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="small-title">上传证件照</h3>
+                    <div class="pc-main-photo" id="pc-main-logo">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group photo-up">
+                                    <label class="sr-only" for="person-logo">照片</label>
+                                    <input type="file" id="person-logo" accept="image/*" name="person-logo">
+                                    <p class="sr-only">*没有上传</p>
+                                    <div class="photo-mask">点击上<br />传照片</div>                                  
+                                    <img src="#" class="person-img" id="person-img" alt="logo" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ca-next-button">
+                        <button type="btn"  class="btn btn-info" id="ca-btn-next">下一步</button>
+                    </div>
+                    <h3>主持的主要项目<small>(不超过5项)</small></h3>
+                    <div class="main-project" id="main-project">
+                        <div class="row">
+                            <h4>项目一</h4>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="project-name">项目名称</label>
+                                    <input type="text" class="form-control project-name" name="project-name">
+                                    <p class="sr-only">*没有填写</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="project-nature">项目性质及来源</label>
+                                    <input type="text" class="form-control project-nature" name="project-nature" >
+                                    <p class="sr-only">*没有填写</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="project-asset">项目经费<small>(万元)</small></label>
+                                    <input type="text" class="form-control project-asset" name="project-asset">
+                                    <p class="sr-only">*没有填写</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group form-select form-select-4" id="pr_time">
+                                    <label for="project-time">起止时间</label>
+                                    <select class="form-control project-time-starty">
+                                    </select>
+                                    <select class="form-control project-time-startm">
+                                    </select>
+                                    <span>&#45;</span>
+                                    <select class="form-control project-time-endy">
+                                    </select>
+                                    <select class="form-control project-time-endm">
+                                    </select>
+                                </div>
+                            </div>
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-5  col-md-4">
+                                <button type="button" class="btn btn-default" id="project-btn">&#43;</button>                           
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pro-next-button">
+                        <button type="btn" class="btn btn-info btn-red" id="pro-btn-prev">上一步</button>
+                        <button type="btn" class="btn btn-info" id="pro-btn-next">下一步</button>
+                    </div>
+                    <h3>代表性著作、论文情况<small>(不超过5项)</small></h3>
+                    <div class="main-article" id="main-article">
+                        <div class="row">
+                            <h4>项目一</h4>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="atricle-title">著作或论文名称</label>
+                                    <input type="text" class="form-control article-title" name="article-title">
+                                    <p class="sr-only">*没有填写</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="publish-name">出版单位或刊物名称</label>
+                                    <input type="text" class="form-control publish-name" name="publish-name">
+                                    <p class="sr-only">*没有填写</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="rank">排名<small>(通讯作者标注*号)</small></label>
+                                    <input type="text" class="form-control rank" name="rank">
+                                    <p class="sr-only">*没有填写</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group form-select-1">
+                                    <label for="is-include">被SCI、EI等收录</label>
+                                    <select class="form-control is-include" name="is-include">
+                                        <option>是</option>
+                                        <option>否</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-5  col-md-4">
+                                <button type="button" class="btn btn-default" id="article-btn">&#43;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="art-next-button">
+                        <button type="btn" class="btn btn-info btn-red" id="art-btn-prev">上一步</button>
+                        <button type="btn" class="btn btn-info" id="art-btn-next">下一步</button>
+                    </div>
+                    <h3>重要获奖情况<small>(不超过5项)</small></h3>
+                    <div id="main-prize">
+                        <div class="row">
+                            <h4>项目一</h4>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="prize-name">奖励名称</label>
+                                    <input type="text" class="form-control prize-name" name="prize-name">
+                                    <p class="sr-only">*未填写</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="class">奖励等级</label>
+                                     <input type="text" class="form-control class" name="class">
+                                    <p class="sr-only">*未填写</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="org">授奖单位</label>
+                                    <input type="text" class="form-control org" name="org">
+                                    <p class="sr-only">*未填写</p>
+                                </div>
+                            </div>
+                             <div class="col-md-2">
+                                <div class="form-group form-select-1">
+                                    <label for="date">授奖年度</label>
+                                    <select class="form-control date" name="data"></select>
+                                </div>
+                            </div>
+                             <div class="col-md-1">
+                                <div class="form-group">
+                                    <label for="price-rank">排序</label>
+                                    <input type="text" class="form-control price-rank" name="price-rank">
+                                    <p class="sr-only">*未填写</p>
+                                </div>
+                            </div>
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-5  col-md-4">
+                                <button type="button" class="btn btn-default" id="prize-btn">&#43;</button>        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pri-next-button">
+                        <button type="btn" class="btn btn-info btn-red" id="pri-btn-prev">上一步</button>
+                        <button type="btn" class="btn btn-info" id="pri-btn-next">下一步</button>
+                    </div>
+                    <h3>获授权的专利情况<small>(不超过5项)</small></h3>
+                    <div id="main-patent">
+                        <div class="row">
+                            <h4>项目一</h4>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="patent-name">专利名称</label>
+                                    <input type="text" class="form-control patent-name" name="patent-name">
+                                    <p class="sr-only">*未填完</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="patent-id">专利号</label>
+                                    <input type="text" class="form-control patent-id" name="patent-id">
+                                    <p class="sr-only">*未填完</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="patent-country">专利授权国</label>
+                                    <input type="text" class="form-control patent-country" name="patent-country">
+                                    <p class="sr-only">*未填完</p>
+                                </div>
+                            </div>                          
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="patent-holder">专利权人</label>
+                                    <input type="text" class="form-control patent-holder" name="patent-holder">
+                                    <p class="sr-only">*未填完</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="patent-inventor">发明人</label>
+                                    <input type="text" class="form-control patent-inventor" name="patent-inventor">
+                                    <p class="sr-only">*未填完</p>
+                                </div>
+                            </div>
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-5  col-md-4">
+                                <button type="button" class="btn btn-default" id="patent-btn">&#43;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <button type="button" class="btn btn-info" id="submit">提交</button>
+                    </div>
+                </section>                 
+            </div>         
+        </div>   
+    </div>
+    <footer>
+        <p>华北电力大学电力工程系教师招聘网站</p>
+        <p class="copyright">Copyright © 2018-2020 华北电力大学（保定）网络管理协会. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/form.js"></script>
+    <script src="/public/js/session_form.js"></script>
+    <script src="/public/js/mob_form.js"></script>
+
+</body>
+</html>

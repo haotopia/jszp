@@ -1,0 +1,197 @@
+<!doctype html>
+<html class="no-js">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>华北电力大学电力工程系教师招聘后台管理界面</title>
+	<meta name="description" content="华北电力大学,后台登录界面,教师招聘,华北电力大学电力工程系,教师招聘,登录,表格,管理">
+	<meta name="keywords" content="华北电力大学电力工程系教师招聘后台管理界面是为了查看报名教师的信息的后台界面">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 可选的Bootstrap主题文件（一般不使用） -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="icon" type="image/png" href="/public/img/favicon.png">
+	<link rel="apple-touch-icon-precomposed" href="/public/img/app-icon72x72@2x.png">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+	<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
+	<link rel="stylesheet" href="/public/css/amazeui.min.css"/>
+	<link rel="stylesheet" href="/public/css/admin-.css">
+
+
+
+
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<header class="am-topbar admin-header">
+	<div class="am-topbar-brand">
+		<img style="height: 80%" src="/public/img/logo.png">
+		<small>电力系教师招聘管理后台</small>
+	</div>
+
+	<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}">
+		<span class="am-sr-only">导航切换</span>
+		<span class="am-icon-bars"></span>
+	</button>
+
+  	<div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+		<ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+			<li>
+			<a href="logout">
+				<span class="am-icon-power-off"></span>退出
+			</a>
+			</li>
+		</ul> 
+	</div>
+</header>
+
+<div class="am-cf admin-main">
+  <!-- content start -->
+  	<div class="admin-content">
+		<div class="am-g">
+			<div class="am-u-md-6 am-cf">
+				<div class="am-fl am-cf">
+					<div class="am-btn-toolbar am-fl">
+						<div class="am-btn-group am-btn-group-xs">
+							<button type="button" class="am-btn am-btn-default" id="getAll">
+								<span class="am-icon-save"></span>
+								<a href="outputAll">导出全部报名表</a>
+							</button>
+							<button type="button" class="am-btn am-btn-default" id="getPart">
+								<span class="am-icon-save"></span> 
+								<a href="#">导出选中报名表</a>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="am-u-md-3 am-cf">
+                <form action="search" method="post">
+				<div class="am-fr">
+					<div class="am-input-group am-input-group-sm">
+						<input type="text" class="am-form-field" id="content" name="content">
+							<span class="am-input-group-btn">
+							<button class="am-btn am-btn-default" type="submit" >
+								搜索
+							</button>
+							</span>
+					</div>
+				</div>
+                </form>
+			</div>
+		</div>
+		<div class="am-g">
+			<div class="am-u-sm-12">
+				<form class="am-form">
+					<table class="am-table am-table-striped am-table-hover table-main" id="table">
+						<thead>
+							<tr>
+								<th class="table-check">
+									<input type="checkbox" />
+								</th>
+								<th>ID</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>出生年月</th>
+								<th>政治面貌</th>
+								<th>学历</th>
+								<th>毕业院校</th>
+								<th>专业</th>
+								<th>研究方向</th>
+								<th>人才计划</th>
+								<th>报名团队</th>
+								<th>操作</th>
+							</tr>
+						</thead> 
+						<tbody>
+						{volist name='list' id='user'}
+							<tr>
+								<td><input type="checkbox" /></td>
+								<td>{$user.candidate_id}</td>
+								<td><a href="#">{$user.candidate_name}</a></td>
+								<td>{$user.sex}</td>
+								<td>{$user.dob}</td>
+								<td>{$user.party}</td>
+								<td>{$user.full_time_degree}</td>
+								<td>{$user.ft_school}</td>
+								<td>{$user.profession}</td>
+								<td>{$user.ft_school}</td>
+								<td>{$user.programme_info}</td>
+								<td>{$user.team}</td>
+								<td>
+									<div class="am-btn-toolbar">
+									<div class="am-btn-group am-btn-group-xs">
+										<button class="am-btn am-btn-default am-btn-xs am-text-secondary" formaction="/{$user.pdf}">
+											<span class="am-icon-pencil-square-o"></span>
+											 查看
+										</button>
+									</div>
+									</div>
+								</td>
+							</tr>
+						{/volist}
+						</tbody>
+					</table>
+					<div class="am-cf">
+						<div id="dataNumber">共 {$count} 条记录</div>
+						<div class="am-fr">
+							{$page|raw}
+							<!--<ul class="am-pagination">
+								<li class="am-disabled"><a href="#">«</a></li>
+								<li class="am-active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#">»</a></li>
+							</ul>-->
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+  	</div>
+  <!-- content end -->
+</div>
+
+<footer>
+		Copyright © 2018-2020 All Rights Reserved.
+	<a href="http://202.206.223.121：8081" target="_blank" title="NMC">华北电力大学网络管理协会 </a>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="/public/js/polyfill/rem.min.js"></script>
+<script src="/public/js/polyfill/respond.min.js"></script>
+<script src="/public/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="/public/js/jquery.min.js"></script>
+<script src="/public/js/amazeui.min.js"></script>
+<!--<![endif]-->
+<script src="/public/js/app.js"></script>
+<script src="/public/js/table.js"></script>
+
+</body>
+</html>

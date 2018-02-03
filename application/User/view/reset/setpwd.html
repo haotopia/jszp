@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>设置新密码</title>
+    <meta name="keywords" content="华北电力大学,设置密码界面,教师招聘,华北电力大学电力工程系,教师招聘,密码">
+    <meta name="description" content="华北电力大学电力工程系教师招聘网站设置新密码界面">
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="/public/css/reset.css" rel="stylesheet">
+    <link href="/public/css/main.css" rel="stylesheet">
+    <style>
+        @media only screen and (max-width: 479px) {
+            .form-horizontal .form-group {
+                padding: 0 25px;
+            }
+            .form-horizontal .form-group i {
+                left: 45px;
+            }
+            .forgetdwd {
+                padding-right: 30px;
+            }
+            .form-verfction img {
+                width: 30%;
+            }
+        }
+
+        @media only screen and (max-width: 360px) {
+            .form-horizontal .btn {
+                padding: 10px 20px;
+            }
+            .form-verfction img {
+                width: 35%;
+            }
+        }
+
+        .form-verfction span {
+            position: absolute;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6 login-content" id="set-pwd">
+                <form class="form-horizontal find_psd" id="form-pwd">
+                    <span class="heading">设置新密码</span>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="新密码" autofocus>
+                        <i class="glyphicon glyphicon-lock"></i>
+                        <span class="sr-only"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="register" placeholder="确认新密码">
+                        <i class="glyphicon glyphicon-lock"></i>
+                        <span class="sr-only"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-default" id="submit">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>华北电力大学电力工程系教师招聘网站</p>
+        <p class="copyright">Copyright © 2018-2020 华北电力大学（保定）网络管理协会. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/public/js/setpwd.js"></script>
+
+</body>
+
+</html>

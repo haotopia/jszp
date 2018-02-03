@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户登录</title>
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="/public/css/reset.css" rel="stylesheet">
+    <link href="/public/css/user.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 user-content" id="use-content">
+            {volist name='list' id='user'}
+            <img src="/uploads/{$user.personal_photo}" class="img-responsive" alt="照片">
+            <p id="user-name">{$user.candidate_name}</p>
+            {/volist}
+            <p id="uesr-success">成功！</p>
+            <div class="position">
+                <button type="button" class="btn" id="download">
+                    <a href="index/makePDF">下载报名表</a>
+                </button>
+            </div>
+            <div class="position">
+                <button type="button" class="btn" id="alter">
+                    <a href="index/form">修改报名表</a>
+                </button>
+            </div>
+            <a href="index/logout" class="end">安全退出</a>
+        </div>
+    </div>
+    <footer>
+        <p>华北电力大学电力工程系教师招聘网站</p>
+        <p class="copyright">Copyright © 2018-2020 华北电力大学（保定）网络管理协会. All rights reserved.</p>
+    </footer>
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="/public/js/user.js"></script>
+</body>
+</html>

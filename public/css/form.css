@@ -1,0 +1,284 @@
+/* PC css */
+body {
+    background-color: #494a5f;
+    padding: 25px 5px;
+}
+
+.pc {
+    margin-top: 45px;
+}
+
+.pc-content {
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 35px 50px;
+}
+@media screen and (max-width: 1488px) and (min-width: 1335px) {
+    .pc-content {
+        width: 75%;
+        float: left;
+        margin-left: 12.5%;
+    }
+}
+@media screen and (max-width: 1335px) and (min-width: 1200px) {
+    .pc-content {
+        width: 80%;
+        float: left;
+        margin-left: 10%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .pc {
+        margin-top: 0;
+    }
+    .pc-content {
+        padding: 40px 20px;
+        border-radius: 5px;
+    }
+}
+.pc-content h2 {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+    .pc-content h2 {
+        font-size: 25px;
+    }
+}
+.pc-content h2:first-child{
+    margin-bottom: 15px;
+}
+
+.pc-maincon {
+    border-left: 1px solid rgba(69, 73, 69, 0.667);
+}
+
+.pc-maincon h3 {
+    margin-left: 15px;
+    position: relative;
+}
+
+.pc-maincon h3:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    position: absolute;
+    left: -21px;
+    background-color: #aeaeae;
+}
+
+.pc-maincon>div {
+    padding: 15px 10px;
+}
+
+.pc-maincon .row {
+    padding: 0;
+    margin: 0;
+}
+
+.pc-maincon .form-group label {
+    font-weight: normal;
+    display: block;
+}
+
+.pc-maincon .form-group label small {
+    font-size: 35%;
+}
+
+.pc-main-infor .form-group input,
+.pc-main-infor .form-group select {
+    width: 80%;
+}
+
+.pc .form-group {
+    min-height: 78px;
+}
+
+.pc .pc-main-study .form-group,
+.pc .pc-main-intro .form-group {
+    min-height: 150px;
+}
+
+.pc .form-group p {
+    color: red;
+    font-size: 12px;
+    position: relative;
+}
+
+.pc .row button.btn {
+    width: 85px;
+}
+
+.form-group.form-select select {
+    width: 30%;
+    display: inline;
+    padding: 0;
+}
+@media screen and (max-width: 768px) {
+    .form-group.form-select select {
+        width: 25%;
+    }
+}
+/* 学位学历 */
+.pc-maincon .small-title:before {
+    background-color: #fff;
+    border: 1px solid #aeaeae;
+}
+
+.pc-main-photo .photo-up {
+    position: relative;
+    min-height: 185px;
+}
+
+.pc-main-photo .photo-up input {
+    max-width: 135px;
+    height: 100%;
+    outline: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    z-index: 2;
+}
+
+.pc-main-photo .photo-mask {
+    width: 145px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px dashed #aeaeae;
+    text-align: center;
+    padding: 55px 0;
+    color : #aeaeae;
+    line-height: 37px;
+}
+
+.pc-main-photo .person-img {
+    position: absolute;
+    width: 145px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .pc-main-photo .photo-up {
+        min-height: 120px;
+    }
+    .pc-main-photo .photo-mask {
+        line-height: 25px;
+        padding: 35px 0;
+    }
+    .pc-main-photo .photo-up input,
+    .pc-main-photo .photo-mask,
+    .pc-main-photo .person-img {
+        width: 80px;
+    }
+}
+/* 主持的主要项目 */
+.form-group.form-select-4 select{
+    width: 21%;
+}
+
+.form-group.form-select-1 select {
+    padding: 0;
+}
+
+.pc-content .row>h4 {
+    margin-left: 15px; 
+    position: relative;
+}
+
+.pc-content .row>span {
+    float: right;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.pc-maincon .row>h4:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    position: absolute;
+    left: -32px;
+    background-color: #fff;
+    border: 1px solid #aeaeae;
+}
+
+.pc-content .submit {
+    position: relative;
+}
+
+.pc-content .submit button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    border-radius: 15px;
+    background-color: #00b4ef;
+    outline: none;
+}
+
+footer {
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+}
+
+footer .copyright {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 489px) {
+    footer .copyright {
+        font-size: 10px;
+    }
+}
+
+/* 移动端 */
+
+.ca-next-button,
+.pro-next-button,
+.art-next-button,
+.pri-next-button {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .ca-next-button,
+    .pro-next-button,
+    .art-next-button,
+    .pri-next-button {
+        display: flex;
+        justify-content: center;
+    }
+
+    .ca-next-button button,
+    .pro-next-button button,
+    .art-next-button button,
+    .pri-next-button button {
+        width: 70px;
+        border-radius: 15px;
+        background-color: #00b4ef;
+        outline: none;
+    }
+
+    .pro-next-button .btn-red,
+    .art-next-button .btn-red,
+    .pri-next-button .btn-red {
+        background-color: #ff4948;
+        margin-right: 15px;
+    }
+
+    .ca-next-button~h3,
+    .ca-next-button~div {
+        display: none;
+    }
+}

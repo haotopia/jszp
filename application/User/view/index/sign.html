@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户登录</title>
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="/public/css/reset.css" rel="stylesheet">
+    <link href="/public/css/main.css" rel="stylesheet">
+    <link href="/public/css/sign.css" rel="stylesheet">
+    <script src="/public/js/main.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4 login-content" id="sign-in">
+                <form class="form-horizontal sign" id="form-sign">
+                    <span class="heading">用户注册</span>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="电子邮件" autofocus>
+                        <i class="glyphicon glyphicon-user"></i>
+                        <span class="sr-only"></span>
+                    </div>
+                    <div class="form-group help">
+                        <input type="password" class="form-control" name="password" placeholder="密码">
+                        <i class="glyphicon glyphicon-lock"></i>
+                        <span class="sr-only"></span>
+                    </div>
+                    <div class="form-group help">
+                        <input type="password" class="form-control" name="register" placeholder="确认密码">
+                        <i class="glyphicon glyphicon-lock"></i>
+                        <span class="sr-only"></span>
+                    </div>
+                    <div class="form-group form-verfction">
+                        <input type="text" class="form-control sign-verfction" name="validate" placeholder="验证码" onclick="this.src=this.src+'?'+Math.random()">
+                        <i class="glyphicon glyphicon-edit"></i>
+                        <span class="sr-only"></span>
+                        <img src="{:captcha_src()}" alt="验证码" width="35%" height="40" onclick="this.src=this.src+'?'+Math.random()" />
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-red" id="sign">注册</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>华北电力大学电力工程系教师招聘网站</p>
+        <p class="copyright">Copyright © 2018-2020 华北电力大学（保定）网络管理协会. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script  src="/public/js/sign.js"></script>
+</body>
+
+</html>
